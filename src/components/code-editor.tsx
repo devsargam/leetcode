@@ -17,7 +17,7 @@ export const CodeEditor = () => {
         if (!text) return;
         setEditorState(text);
       }}
-      height="90vh"
+      height="100vh"
       theme="vs-dark"
       defaultLanguage="javascript"
       defaultValue="// some comment"
