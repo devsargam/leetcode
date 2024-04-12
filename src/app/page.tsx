@@ -1,3 +1,11 @@
+import { CodeEditor } from "@/components/code-editor";
+
 export default function Home() {
-  return <>Home Page</>;
+  return (
+    <>
+      <CodeEditor />
+      {/* Problem Statement */}
+      {/* IO */}
+    </>
+  );
 }
