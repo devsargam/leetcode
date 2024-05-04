@@ -17,10 +17,11 @@ export const CodeEditor = () => {
         if (!text) return;
         setEditorState(text);
       }}
+      value={editorState} 
       height="100vh"
       theme="vs-dark"
       defaultLanguage="javascript"
-      defaultValue="// some comment"
+      className="font-xl"
     />
   );
 };
