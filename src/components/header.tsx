@@ -1,9 +1,11 @@
+import { SubmitButton } from "./submit-button";
+
 export const Header = () => {
   return (
     <>
-      <nav className="w-full flex justify-between py-4 px-8 bg-black text-white border-b">
+      <nav className="w-full flex justify-between items-center py-1 px-8 bg-slate-200 border-b">
         <div>Problem List</div>
-        <div>Run</div>
+        <SubmitButton />
         <button>Signin</button>
       </nav>
     </>
