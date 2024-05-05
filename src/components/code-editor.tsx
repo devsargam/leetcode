@@ -1,14 +1,15 @@
 "use client";
 
+import { useEditorState } from "@/store/use-submission";
 import { Editor } from "@monaco-editor/react";
 import { useEffect, useState } from "react";
 
 export const CodeEditor = () => {
-  const [editorState, setEditorState] = useState("");
+  const setEditorState = useEditorState((state) => state.setEditorText);
+  const editorState = useEditorState((state) => state.editorText);
 
   useEffect(() => {
     // TODO: Handle this
-    console.log(editorState);
   }, [editorState]);
 
   return (
@@ -17,7 +18,7 @@ export const CodeEditor = () => {
         if (!text) return;
         setEditorState(text);
       }}
-      value={editorState} 
+      value={editorState}
       height="100vh"
       theme="vs-dark"
       defaultLanguage="javascript"

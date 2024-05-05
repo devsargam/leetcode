@@ -1,5 +1,6 @@
 import { CodeEditor } from "@/components/code-editor";
 import { Header } from "@/components/header";
+import { OutputPanel } from "@/components/output-panel";
 import {
   ResizableHandle,
   ResizablePanel,
@@ -33,7 +34,9 @@ export default function ProblemPage() {
             <ResizablePanel defaultSize={75} className="m-2 rounded-xl">
               {/* // TODO: Replace this with some io */}
               <div className="flex h-full items-center justify-center p-6 bg-gray-200">
-                <span className="font-semibold">Three</span>
+                <span className="font-semibold">
+                  <OutputPanel />
+                </span>
               </div>
             </ResizablePanel>
           </ResizablePanelGroup>
