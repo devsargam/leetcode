@@ -1,5 +1,8 @@
-export const OutputPanel = () => {
-  // const outputState =
+"use client";
+import { useOutputState } from "@/store/use-output";
 
-  return <>Output Will be displayed here</>;
+export const OutputPanel = () => {
+  const outputState = useOutputState((state) => state.outputState);
+
+  return <>{outputState}</>;
 };

@@ -19,7 +19,10 @@ export const CodeEditor = () => {
         setEditorState(text);
       }}
       value={editorState}
-      height="100vh"
+      height="90vh"
+      options={{
+        fontSize: 20,
+      }}
       theme="vs-dark"
       defaultLanguage="javascript"
       className="font-xl"
