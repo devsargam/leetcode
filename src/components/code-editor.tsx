@@ -21,7 +21,7 @@ export const CodeEditor = () => {
       value={editorState}
       height="90vh"
       options={{
-        fontSize: 20,
+        fontSize: 16,
       }}
       theme="vs-dark"
       defaultLanguage="javascript"
