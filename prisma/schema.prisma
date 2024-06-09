@@ -1,0 +1,56 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Difficulty {
+  EASY
+  MEDIUM
+  HARD
+}
+
+model Problem {
+  id          String     @id @default(cuid())
+  title       String
+  description String
+  difficulty  Difficulty @default(MEDIUM)
+  markdown    String
+  boilerplate String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  Boilterplate Boilterplate[]
+  Language     Language[]
+}
+
+model Boilterplate {
+  id        String   @id @default(cuid())
+  language  Language @relation(fields: [languageId], references: [id])
+  code      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  Problem    Problem @relation(fields: [problemId], references: [id])
+  problemId  String
+  languageId Int
+}
+
+model Language {
+  id        Int      @id @default(autoincrement())
+  name      String
+  judge0Id  Int      @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  Problem      Problem        @relation(fields: [problemId], references: [id])
+  problemId    String
+  Boilterplate Boilterplate[]
+}
