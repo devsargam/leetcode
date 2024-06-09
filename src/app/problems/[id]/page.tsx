@@ -8,6 +8,18 @@ import {
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
 
+// TODO: Get this form database
+const markdown = `
+## Hi there!
+*Pluto*!
+
+- [x] This is a complete item
+- [ ] This is an incomplete item
+\`\`\`py
+print("Hello, World!")
+\`\`\`
+`;
+
 // TODO: Change the title and meta tags according to the problem
 
 export default function ProblemPage() {
@@ -19,7 +31,7 @@ export default function ProblemPage() {
       <Header />
       <ResizablePanelGroup direction="horizontal" className="w-full h-full">
         <ResizablePanel defaultSize={40} className="m-1 rounded-xl">
-          <MarkdownRenderer />
+          <MarkdownRenderer markdown={markdown} />
         </ResizablePanel>
         <ResizableHandle withHandle />
         <ResizablePanel defaultSize={60}>
