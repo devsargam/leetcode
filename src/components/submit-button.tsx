@@ -11,6 +11,7 @@ export const SubmitButton = () => {
 
   const handleClick = async () => {
     // TODO: Base64 encode the editor state
+    // TODO: Do a rate limit check
     const res = await axiosBase.post(
       "/submissions?base64_encoded=true&wait=true",
       {
