@@ -1,0 +1,18 @@
+{
+  "name": "@lc/db",
+  "version": "0.0.0",
+  "exports": {
+    "./client": "./index.ts"
+  },
+  "scripts": {
+    "db:seed": "prisma db seed",
+    "db:migrate": "prisma migrate dev"
+  },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "5.15.0",
+    "prisma": "^5.15.0"
+  }
+}
